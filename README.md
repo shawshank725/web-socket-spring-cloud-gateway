@@ -33,6 +33,7 @@ This project demonstrates a solution for enabling WebSocket communication betwee
 
 2. **Run Backend Services in IntelliJ**:
    - Open the project in IntelliJ (or your preferred IDE).
+   - In the config-repo, open command prompt or git bash and initialize a git repository.
    - Start the services in this order:
      1. **Config Server** (port 8888)
      2. **Gateway** (port 9999)
@@ -85,3 +86,4 @@ This project addresses the challenge of enabling WebSocket communication between
 ## Notes 📝
 - Ensure all services are running and properly configured with Consul.
 - The project focuses solely on resolving WebSocket communication issues via the gateway and notification service configuration.
+
