@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: notification-service-websocket
+              uri: ws://localhost:8080
+              predicates:
+                - Path=/ws/**
+              filters:
+#                - RewritePath=/ws(?<remains>/?.*), /ws${remains}
+                - PreserveHostHeader
+
+            - id: notification-service-rest
+              uri: lb://notification-service
+              predicates:
+                - Path=/notifications/**
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.gateway.filter.WebsocketRoutingFilter: DEBUG
