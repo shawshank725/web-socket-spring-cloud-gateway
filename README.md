@@ -1,8 +1,8 @@
-# WebSocket Gateway Notification Project
+# WebSocket Gateway Notification Project 🎉🚀
 
 This project demonstrates a solution for enabling WebSocket communication between a React frontend and a Spring Boot-based notification service via a Spring Cloud Gateway, with service discovery handled by Consul. It addresses common WebSocket connectivity issues and provides a working setup for developers facing similar challenges.
 
-## Technologies Used
+## Technologies Used 🌐💻
 - **Spring Boot**: Backend framework.
 - **Spring Cloud Gateway**: API gateway for routing WebSocket traffic.
 - **Consul**: Service discovery and configuration management.
@@ -11,13 +11,14 @@ This project demonstrates a solution for enabling WebSocket communication betwee
 - **MySQL**: Database for storing notification data.
 - **JPA (Hibernate)**: ORM for database interactions.
 
-## How to Run the Project
+## How to Run the Project 🛠️🔧
 
 ### Prerequisites
 - Install MySQL and ensure it is running.
 - Install Node.js and npm for the frontend.
 - Install IntelliJ (or any IDE) for backend development.
 - Open Command Prompt as Administrator.
+- **Download HashiCorp Consul**, add it to your system PATH, and then run it.
 
 ### Steps
 
@@ -53,16 +54,16 @@ This project demonstrates a solution for enabling WebSocket communication betwee
    - Open your browser and navigate to `http://localhost:5173`.
    - Open Developer Tools (Ctrl + Shift + I), go to the Console tab, and verify the WebSocket connection to `ws://localhost:9999/ws` is established.
 
-## Project Use Case
+## Project Use Case 🌟📢
 This project addresses the challenge of enabling WebSocket communication between a frontend and a notification service (or any other service) through a gateway. I encountered significant difficulties with this setup, and this project is designed to help others facing similar issues.
 
-### Issues Faced
+### Issues Faced ⚠️
 - **Invalid Upgrade Header**
 - **403 Forbidden**
 - **400 Bad Request**
 - **Lost Connection to WebSocket `ws://localhost:9999/ws`**
 
-### How the Project Works
+### How the Project Works ✅
 - **Ditched SockJS**: Removed SockJS from both frontend and backend to simplify WebSocket implementation.
 - **WebSocket Configuration**: In the `WebSocketConfig` file of the notification service:
   - Removed `.withSockJS()` from `registerStompEndpoints`.
@@ -76,11 +77,11 @@ This project addresses the challenge of enabling WebSocket communication between
     ```
   - Note: The `RewritePath` filter was found to be unnecessary and its presence or absence does not impact functionality.
 
-### Key Files
+### Key Files 📄
 - **Gateway `application.yml`**: Configures routing and filters for WebSocket communication.
 - **Notification Service `WebSocketConfig`**: Manages WebSocket endpoints and origin settings.
 - Other folders (e.g., `entity`, `repository`, `service`, `controller`) are not directly related to WebSocket functionality.
 
-## Notes
+## Notes 📝
 - Ensure all services are running and properly configured with Consul.
 - The project focuses solely on resolving WebSocket communication issues via the gateway and notification service configuration.
